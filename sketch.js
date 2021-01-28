@@ -4,6 +4,7 @@ const Bodies = Matter.Bodies;
 
 
 var starNightImage,fairyImage,starImage;
+var sound;
 var world,engine;
 
 function preload()
@@ -12,6 +13,7 @@ function preload()
    starNightImage = loadImage("images/starnight.png");
    fairyImage =loadAnimation("images/fairy1.png","images/fairy2.png");
    starImage = loadImage("images/star.png");
+   sound = loadSound("sound/joyMusic.mp3");
 
 }
 
@@ -38,6 +40,7 @@ function draw() {
 
   background(starNightImage);
 
+  sound.play();
   Engine.update(engine);
   ellipseMode(RADIUS);
   ellipse(starBody.position.x,starBody.position.y,10,10);
